@@ -1,13 +1,17 @@
 import { useState } from "react"
 import styles from "../../../styles/Search.module.css"
+import { Raleway } from 'next/font/google'
+
+const raleway = Raleway({ subsets: ['latin'] })
+
 export default function Search() {
 
-    return <>
+    return <div className={styles.mainSearch}>
         <input type="text" name="text" className={styles.searchBar} placeholder="Prompt" />
-        <button className={styles.searchButton}>
-            <span>
-                Search
+        <button className={`${styles.searchButton} ${raleway.className}`}>
+            <span >
+            Search
             </span>
         </button>
-    </>
+    </div>
 }

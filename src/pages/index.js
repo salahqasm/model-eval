@@ -1,10 +1,12 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Raleway } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import Search from "./Components/Search/Search";
 
-const raleway = Raleway({ subsets: ["latin"] });
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from '@/styles/Home.module.css'
+import Search from './Components/Search/Search'
+import { Raleway } from 'next/font/google'
+import Card from './Components/Card/Card'
+
+const raleway = Raleway({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -23,9 +25,9 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${raleway.className} `}>
         <Search />
-        <h1>Test</h1>
-        <p>Test</p>
-      </main>
+        <Card />
+      </main >
+
     </>
   );
 }
