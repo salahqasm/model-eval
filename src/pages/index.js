@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Rubik } from 'next/font/google'
+import { Raleway } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Search from './Components/Search/Search'
 
-const inter = Rubik({ subsets: ['latin'] })
+const raleway = Raleway({  subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -20,9 +20,11 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;900&display=swap" rel="stylesheet"></link>
 
       </Head>
-      <main className={`${styles.main} ${Rubik.className}}>
-      <Search />
-    </main >
+      <main className={`${styles.main} ${raleway.className} `}>
+        <Search />
+        <h1>Test</h1>
+        <p>Test</p>
+      </main >
     </>
   )
 }
