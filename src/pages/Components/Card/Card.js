@@ -1,8 +1,10 @@
+import styles from "../../../styles/Card.module.css";
 
-import styles from "../../../styles/Card.module.css"
-export default function Card() {
-    return <div className={styles.card}>
-        <h4>Your Answer From [ LLM ] is: </h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+export default function Card(props) {
+  return (
+    <div className={styles.card}>
+      <h4>{props.result.result}</h4>
+      <p>Your Answer From [ {props.result.source} ] is: </p>
     </div>
+  );
 }
