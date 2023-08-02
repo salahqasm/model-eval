@@ -1,66 +1,67 @@
 .searchBar {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-weight: 500;
-    font-size: .8vw;
-    color: #fff;
-    box-sizing: border-box;
-    background-color: #1B1726;
-    box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
-    border-radius: 0.4vw;
-    border: none;
-    outline: none;
-    padding: 1rem;
-    width: 80%;
-    height: 3rem;
-    transition: .4s;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 500;
+  font-size: 0.8vw;
+  color: #fff;
+  box-sizing: border-box;
+  background-color: #1b1726;
+  box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  width: 80%;
+  height: 3rem;
+  transition: 0.4s;
 }
 
 .searchBar:hover {
-    box-shadow: 0 0 0 .15vw rgba(135, 207, 235, 0.186);
+  box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
 }
 
 .searchBar:focus {
-    background-color: #3B3B51;
-    box-shadow: 0 0 0 .15vw skyblue;
+  background-color: #3b3b51;
+  box-shadow: 0 0 0 0.15vw skyblue;
 }
 
 .searchButton {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #1B1726;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 17px;
-    width: 7%;
-    height: 3rem;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #1b1726;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  width: 7%;
+  height: 3rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .searchButton span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
 .searchButton span:after {
-    content: '»';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -15px;
-    transition: 0.5s;
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
 }
 
 .searchButton:hover span {
-    padding-right: 15px;
+  padding-right: 15px;
 }
 
 .searchButton:hover span:after {
-    opacity: 1;
-    right: 0;
+  opacity: 1;
+  right: 0;
 }
-
