@@ -10,7 +10,7 @@ export default function Search() {
         <input type="text" name="text" className={styles.searchBar} placeholder="Prompt" />
         <button className={`${styles.searchButton} ${raleway.className}`}>
             <span >
-            Search
+                Send
             </span>
         </button>
     </div>

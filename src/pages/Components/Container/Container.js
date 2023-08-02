@@ -1,6 +1,7 @@
 import { useState } from "react";
 import style from "../../../styles/Container.module.css";
 import Card from "../Card/Card";
+import NavButton from "../navButton/NavButton";
 
 export default function Container() {
   const [isSelected, setIsSelected] = useState({ source: "", result: "" });
@@ -22,7 +23,7 @@ export default function Container() {
         <ul className={style.list}>
           {results.map((res) => (
             <li onClick={() => changeSelect(res)}>
-              <Card result={res} />
+              <NavButton source={res.source} />
             </li>
           ))}
         </ul>
