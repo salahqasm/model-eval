@@ -18,13 +18,12 @@ export default function Container() {
   return (
     <>
       <div className={style.container}>
-        <ul className={style.list}>
-          {results.map((res) => (
-            <li onClick={() => changeSelect(res)}>
-              <Card />
-            </li>
-          ))}
-        </ul>
+        {/* <ul className={style.list}> */}
+        {results.map((res) => (
+          // <li onClick={() => changeSelect(res)}>
+          <Card />
+        ))}
+        {/* </ul> */}
       </div>
     </>
   );

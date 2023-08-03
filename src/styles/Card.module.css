@@ -1,20 +1,56 @@
 .card {
-
   margin: 1rem;
-  width: 20rem;
-  height: 70vh;
+  width: 25%;
   box-sizing: border-box;
-  padding: 30px;
+
   min-height: 20vh;
   background-color: #F5F5F5;
   border-radius: 25px;
   font-weight: 600;
   color: #0A1C2D;
   text-align: justify;
-  line-height: 2.5;
+  position: relative;
+  text-align: center;
+  height: 70vh;
+  overflow-y: scroll;
+
 }
 
-@media only screen and (width>850) {
+.card::-webkit-scrollbar {
+  display: none;
+}
+
+.title {
+  background-color: #F5F5F5;
+  padding: 10px 0;
+  font-weight: 800;
+  font-size: large;
+  position: sticky;
+  top: 0;
+  display: block;
+  border-bottom: 1px #e9e4dc solid;
+
+}
+
+.result {
+  padding: 0 10%;
+  text-align: justify;
+  line-height: 2;
+}
+
+.time {
+  position: sticky;
+  top: 93%;
+  right: 97%;
+  font-size: smaller;
+  display: block;
+  background-color: #F5F5F5;
+  padding: 10px 0;
+  border-top: 1px #e9e4dc solid;
+
+}
+
+@media (max-width: 768px) {
   .card {
     width: 100%;
     display: block;

@@ -4,7 +4,7 @@
 
 :root {
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #e5e5e5;
   background-color: #e9e4dc;
 }
