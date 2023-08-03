@@ -17,7 +17,7 @@
   border: none;
   outline: none;
   padding: 1rem;
-  width: 91%;
+  width: 89%;
   height: 3rem;
   transition: .4s;
   vertical-align: middle;
@@ -41,13 +41,24 @@
   background-image: url("../../public/paper-plane.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 35px;
+  background-size: 30px;
   border: none;
   border-radius: 10px;
   height: 3rem;
-  width: 4%;
+  width: 40px;
   margin: 0 0 0 1%;
   vertical-align: middle;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-.searchButton:hover {}
+.searchButton:hover {
+  transform: scale(103%);
+  transition: 0.2s;
+}
+
+@media (max-width: 450px) {
+  .searchBar {
+    width: 60%;
+  }
+}

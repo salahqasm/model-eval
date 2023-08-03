@@ -1,5 +1,6 @@
 .container {
   margin: auto;
+  width:100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,10 +14,11 @@
   align-items: center;
   list-style-type: none;
 }
-@media only screen and (max-width>850) {
-  .container {
-    flex-direction: row;
-
+/* @media (max-width: 849px) {
+  .card {
+    display: block;
+    width: 100;
+    max-width: 850px; 
   }
-
 }
+*/
