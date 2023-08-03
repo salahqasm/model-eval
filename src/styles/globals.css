@@ -1,7 +1,12 @@
-
-:root{
-  background-color: #EEEEEE;
+* {
+  margin: 0;
 }
+
+:root {
+  background-color: #EEEEEE;
+  
+}
+
 /* 
 
 :root {
@@ -113,4 +118,3 @@ a {
   }
 
 } */
-

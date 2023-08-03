@@ -15,3 +15,11 @@
   /* rgb(59, 59, 81, 0.7); */
   line-height: 2.5;
 }
+
+@media only screen and (width>850) {
+  .card {
+    width: 100%;
+    display: block;
+  }
+
+}

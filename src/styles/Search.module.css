@@ -1,24 +1,27 @@
 .mainSearch {
-    width:90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
+  position: fixed;
+  bottom: 0;
+  left: 5%;
 }
 
 .searchBar {
 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-weight: 500;
-    /* font-size: .8vw; */
-    color: #000000;
-    box-sizing: border-box;
-    background-color: #F6F4EB;
-    box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
-    border-radius: 0.4vw;
-    border: none;
-    outline: none;
-    padding: 1rem;
-    width:91%;
-    height: 3rem;
-    transition: .4s;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  /* font-size: .8vw; */
+  color: #000000;
+  box-sizing: border-box;
+  background-color: #F6F4EB;
+  box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  width: 91%;
+  height: 3rem;
+  transition: .4s;
 
 }
 
@@ -33,22 +36,22 @@
 
 .searchButton {
 
-    display: inline-block;
-    box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
-    border-radius: 8px;
-    background-color: #d21b1b;
-    border: none;
-    color: #fff;
-    font-weight: 600;
-    text-align: center;
-    font-size: 17px;
-    width: 8%;
-    height: 3rem;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin:0 0 1% 1% ;
-    transition: 0.4s;
-    
+  display: inline-block;
+  box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+  border-radius: 8px;
+  background-color: #d21b1b;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  font-size: 17px;
+  width: 8%;
+  height: 3rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 0 0 1% 1%;
+  transition: 0.4s;
+
 
 }
 
@@ -69,11 +72,11 @@
 }
 
 .searchButton:hover {
-    background-color: #dc1c1c;
-    transform: scale(103%);
-    box-shadow: none;
-    transition: 0.4s;
-    
+  background-color: #dc1c1c;
+  transform: scale(103%);
+  box-shadow: none;
+  transition: 0.4s;
+
 }
 
 .searchButton:hover span {
@@ -82,7 +85,6 @@
 
 .searchButton:hover span:after {
 
-    opacity: 1;
-    right: 0;
+  opacity: 1;
+  right: 0;
 }
-
