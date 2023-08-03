@@ -6,9 +6,12 @@
 .layout {
   display: flex;
   flex-direction: column;
+
   align-items: center;
-  height: 162vh;
+  height: 100vh;
+  border: 4px solid black;
 }
-.search {
+
+/* .search {
   margin-bottom: auto;
-}
+} */
