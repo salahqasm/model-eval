@@ -7,12 +7,10 @@
   min-height: 20vh;
   background-color: #8faebe;
   border-radius: 25px;
-  /* border: 5px solid #4682A9; */
   font-weight: 600;
   color: #000;
   text-align: justify;
   box-shadow: 0px 20px 30px 5px rgb(0, 0, 0, 0.3);
-  /* rgb(59, 59, 81, 0.7); */
   line-height: 2.5;
 }
 
