@@ -1,7 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import Search from "./Components/Search/Search";
+import Header from "./Components/Header/Header";
+
 import { Raleway } from "next/font/google";
 import Container from "./Components/Container/Container";
 
@@ -23,8 +25,11 @@ export default function Home() {
         ></link>
       </Head>
       <main className={`${styles.main} ${raleway.className} `}>
-        <Search />
-        <Container />
+        <div className={styles.layout}>
+          <Header />
+          <Container />
+          <Search className={styles.search} />
+        </div>
       </main>
     </>
   );

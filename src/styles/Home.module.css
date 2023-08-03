@@ -1,5 +1,14 @@
 .main {
   min-height: 100vh;
   text-align: center;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 162vh;
+}
+.search {
+  margin-bottom: auto;
 }
