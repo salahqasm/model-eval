@@ -1,82 +1,53 @@
 .mainSearch {
   width: 90%;
   margin: auto;
-
   position: fixed;
-  bottom: 0;
+  bottom: 20px;
   left: 5%;
 }
 
 .searchBar {
-
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
-  /* font-size: .8vw; */
   color: #000000;
   box-sizing: border-box;
   background-color: #F6F4EB;
-  box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+  box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
+
   border-radius: 0.4vw;
   border: none;
   outline: none;
   padding: 1rem;
   width: 91%;
-
   height: 3rem;
   transition: .4s;
+  vertical-align: middle;
+
 }
 
 .searchBar:hover {
-  box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
+  box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+
 }
 
 .searchBar:focus {
   background-color: #f5f3ec;
-  box-shadow: 0 0 0 0.15vw skyblue;
+  box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+
 }
 
 .searchButton {
 
-
-  display: inline-block;
-  box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
-  border-radius: 8px;
   background-color: #d21b1b;
+  background-image: url("../../public/paper-plane.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 35px;
   border: none;
-  color: #fff;
-  font-weight: 600;
-  text-align: center;
-  font-size: 17px;
-  width: 8%;
+  border-radius: 10px;
   height: 3rem;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 0 0 1% 1%;
-  transition: 0.4s;
-
+  width: 4%;
+  margin: 0 0 0 1%;
+  vertical-align: middle;
 }
 
-/* .searchButton span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.searchButton span:after {
-  content: "»";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -15px;
-  transition: 0.5s;
-} */
-
-.searchButton:hover {
-  background-color: #dc1c1c;
-  transform: scale(103%);
-  box-shadow: none;
-  transition: 0.4s;
-
-}
-
+.searchButton:hover {}

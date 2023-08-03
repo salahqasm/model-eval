@@ -21,7 +21,7 @@ export default function Container() {
         <ul className={style.list}>
           {results.map((res) => (
             <li onClick={() => changeSelect(res)}>
-              <Card result={res.result}/>
+              <Card />
             </li>
           ))}
         </ul>
