@@ -14,7 +14,9 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.post('http://127.0.0.1:8000/llmsResponse', { prompt: "Test" });
+        const res = await axios.post("http://127.0.0.1:8000/llmsResponse", {
+          prompt: "Test",
+        });
         console.log(res.data); // Log the response data instead of the entire response object
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -39,7 +41,6 @@ export default function Home() {
       </Head>
       <Header />
       <main className={`${styles.main} ${raleway.className} `}>
-
         <Search />
         <Container />
         {/* <Test /> */}
