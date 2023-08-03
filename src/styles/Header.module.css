@@ -1,8 +1,10 @@
-.header {
-  text-align: center;
-  background-color: #bbbbbb;
-  box-shadow: 0px 2px 30px 1px #1f353f;
-  width: 102%;
-  padding: 1rem;
-  margin: 0 0 5px 0;
+.headMain {
+    background-color: #d4d4d4;
+    padding: 1rem;
+    text-align: center;
+    color: #343434;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    
 }
+
