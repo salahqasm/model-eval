@@ -28,7 +28,7 @@ export default function Home() {
         <div className={styles.layout}>
           <Header />
           <Container />
-          <Search className={styles.search} />
+          <Search />
         </div>
       </main>
     </>
