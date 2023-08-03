@@ -1,6 +1,7 @@
 .mainSearch {
   width: 90%;
   margin: auto;
+
   position: fixed;
   bottom: 0;
   left: 5%;
@@ -20,9 +21,9 @@
   outline: none;
   padding: 1rem;
   width: 91%;
+
   height: 3rem;
   transition: .4s;
-
 }
 
 .searchBar:hover {
@@ -35,6 +36,7 @@
 }
 
 .searchButton {
+
 
   display: inline-block;
   box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
@@ -52,10 +54,9 @@
   margin: 0 0 1% 1%;
   transition: 0.4s;
 
-
 }
 
-.searchButton span {
+/* .searchButton span {
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -69,7 +70,7 @@
   top: 0;
   right: -15px;
   transition: 0.5s;
-}
+} */
 
 .searchButton:hover {
   background-color: #dc1c1c;
@@ -79,12 +80,3 @@
 
 }
 
-.searchButton:hover span {
-  padding-right: 15px;
-}
-
-.searchButton:hover span:after {
-
-  opacity: 1;
-  right: 0;
-}

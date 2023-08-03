@@ -1,6 +1,8 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Search from "./Components/Search/Search";
+import Header from "./Components/Header/Header";
+
 import { Raleway } from "next/font/google";
 import Container from "./Components/Container/Container";
 import { useEffect } from "react";
@@ -39,6 +41,7 @@ export default function Home() {
       </Head>
       <Header />
       <main className={`${styles.main} ${raleway.className} `}>
+
         <Search />
         <Container />
         {/* <Test /> */}

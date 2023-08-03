@@ -1,7 +1,6 @@
 import { useState } from "react";
 import style from "../../../styles/Container.module.css";
 import Card from "../Card/Card";
-
 export default function Container() {
   const [isSelected, setIsSelected] = useState({ source: "", result: "" });
 

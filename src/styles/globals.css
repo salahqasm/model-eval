@@ -2,9 +2,12 @@
   margin: 0;
 }
 
-:root {
-  background-color: #EEEEEE;
   
+:root {
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #EEEEEE;
+
 }
 
 /* 
@@ -117,4 +120,3 @@ a {
     color-scheme: dark;
   }
 
-} */
