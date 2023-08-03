@@ -13,9 +13,10 @@ export default function Search() {
         className={styles.searchBar}
         placeholder="Prompt"
       />
-      <button
+      <button className={styles.searchButton}></button>
+      {/* <button
         className={`${styles.searchButton} ${raleway.className}`}
-      ></button>
+      ></button> */}
     </div>
   );
 }

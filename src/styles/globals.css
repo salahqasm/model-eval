@@ -1,11 +1,13 @@
 * {
   margin: 0;
 }
+
 :root {
   box-sizing: border-box;
-  background-color: #d3d4d9;
   overflow: hidden;
+  background-color: #e9e4dc;
 }
+
 /* 
 
 :root {
@@ -116,4 +118,4 @@ a {
     color-scheme: dark;
   }
 
-} */
+*/

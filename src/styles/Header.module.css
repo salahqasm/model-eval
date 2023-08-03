@@ -1,8 +1,9 @@
 .headMain {
-  background-color: #d4d4d4;
-  padding: 1rem;
+  background-color: #e9e4dc;
+  padding: 0.5rem;
   text-align: center;
-  color: #343434;
+  color: #0a1c2d;
   word-spacing: 5px;
   letter-spacing: 2px;
+  box-shadow: 0px 1px 30px 1px #0b0a2db8;
 }
