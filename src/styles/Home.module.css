@@ -1,7 +1,7 @@
 .main {
   min-height: 100vh;
   text-align: center;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 .layout {
   display: flex;
