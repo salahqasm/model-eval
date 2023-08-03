@@ -1,6 +1,9 @@
 .mainSearch {
   width: 90%;
   margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .searchBar {
@@ -10,15 +13,13 @@
   font-weight: 500;
   /* font-size: .8vw; */
   color: #000000;
-  box-sizing: border-box;
   background-color: #f6f4eb;
   box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
-  border-radius: 0.4vw;
+  border-radius: 5px;
   border: none;
   outline: none;
   padding: 1rem;
   width: 91%;
-  height: 3rem;
   transition: 0.4s;
 }
 
@@ -34,22 +35,25 @@
 .searchButton {
   display: inline-block;
   box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: #d21b1b;
   border: none;
   color: #fff;
   font-weight: 600;
   text-align: center;
-  font-size: 17px;
   width: 8%;
-  height: 3rem;
+  height: 50px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 0 0 1% 1%;
+  margin: 0 0 0 1%;
   transition: 0.4s;
+  background-image: url("../../public/paper-plane.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px;
 }
 
-.searchButton span {
+/* .searchButton span {
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -63,7 +67,7 @@
   top: 0;
   right: -15px;
   transition: 0.5s;
-}
+} */
 
 .searchButton:hover {
   background-color: rgb(253, 53, 31);
@@ -72,11 +76,11 @@
   transition: 0.4s;
 }
 
-.searchButton:hover span {
+/* .searchButton:hover span {
   padding-right: 15px;
 }
 
 .searchButton:hover span:after {
   opacity: 1;
   right: 0;
-}
+} */

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import style from "../../../styles/Container.module.css";
-import Card from "../Card/Card";
 import NavButton from "../navButton/NavButton";
 
 export default function Container() {
@@ -27,7 +26,6 @@ export default function Container() {
             </li>
           ))}
         </ul>
-        <Card result={isSelected} />
       </div>
     </>
   );
