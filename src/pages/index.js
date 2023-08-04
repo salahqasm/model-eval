@@ -1,28 +1,13 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Search from "./Components/Search/Search";
-import { Raleway } from "next/font/google";
+import { Cairo } from "next/font/google";
 import Container from "./Components/Container/Container";
-import { useEffect } from "react";
-import axios from "axios";
 import Header from "./Components/Header/Header";
-import Test from "./Components/Test/Test";
 
-const raleway = Raleway({ subsets: ["latin"] });
-
+const cairo = Cairo({ subsets: ["latin"] });
 export default function Home() {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.post('http://127.0.0.1:8000/llmsResponse', { prompt: "Test" });
-        console.log(res.data); // Log the response data instead of the entire response object
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  
   return (
     <>
       <Head>
@@ -38,12 +23,24 @@ export default function Home() {
         ></link>
       </Head>
       <Header />
-      <main className={`${styles.main} ${raleway.className} `}>
-
-        <Search />
+      <main className={`${styles.main} ${cairo.className} `}>
         <Container />
-        {/* <Test /> */}
       </main>
     </>
   );
 }
+
+
+
+// useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await axios.post('http://127.0.0.1:8000/llmsResponse', { prompt: "Test" });
+  //       console.log(res.data); // Log the response data instead of the entire response object
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);

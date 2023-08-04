@@ -1,30 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "../../../styles/Container.module.css";
 import Card from "../Card/Card";
+import Search from "../Search/Search";
+import Landing from "../Landing/Landing";
+
 export default function Container() {
-  const [isSelected, setIsSelected] = useState({ source: "", result: "" });
+  const [clicked, setClicked] = useState(false);
+  const [prompt, setPrompt] = useState("");
+  const [gpt4, setGpt4] = useState("");
+  const [gpt4Time, setGpt4Time] = useState("");
+  const [gpt3, setGpt3] = useState("");
+  const [gpt3Time, setGpt3Time] = useState("");
 
-  function changeSelect(r) {
-    setIsSelected({ source: r.source, result: r.result });
-  }
-  //   dummy data
-  const results = [
-    { source: "gpt-4", result: "answer" },
-    { source: "gpt-3.5 turbo", result: "answer" },
-    { source: "Llama-2-70b-chat", result: "answer" },
-    { source: "Falcon-40-instruct", result: "answer" },
-  ];
-
+  //###################################################### Testing prompt 
+  useEffect(() => {
+    console.log(prompt);
+  }, [prompt])
   return (
     <>
-      <div className={style.container}>
-        {/* <ul className={style.list}> */}
-        {results.map((res) => (
-          // <li onClick={() => changeSelect(res)}>
-          <Card />
-        ))}
-        {/* </ul> */}
-      </div>
+      {gpt4 === "" && gpt3 === "" ? <Landing /> :
+
+        <div className={style.container}>
+          <Card title={"GPT 4"} time={gpt4Time} response={gpt4} />
+          <Card title={"GPT 3.5 turbo"} time={gpt3Time} response={gpt3} />
+
+        </div>
+      }
+      <Search prompt={prompt} setPrompt={setPrompt} setClicked={setClicked} setGpt3={setGpt3} setGpt4={setGpt4} setGpt3Time={setGpt3Time} setGpt4Time={setGpt4Time} />
+
     </>
   );
 }
