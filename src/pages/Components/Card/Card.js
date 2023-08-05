@@ -1,14 +1,50 @@
 import styles from "@/styles/Card.module.css"
+import { useEffect, useRef } from "react";
+import { ThreeDots } from "react-loader-spinner";
+
+
 export default function Card({ title, time, response }) {
+    const responseContainerRef = useRef(null);
+
+    function formatTime(time) {
+        const timeInMilliseconds = parseFloat(time);
+        const timeInSeconds = timeInMilliseconds / 1000;
+        if (timeInSeconds >= 60) {
+            const minutes = Math.floor(timeInSeconds / 60);
+            const seconds = Math.round(timeInSeconds % 60);
+            return `${minutes} minute(s) and ${seconds} second(s)`;
+        } else {
+            return `${timeInSeconds.toFixed(2)} second(s)`;
+        }
+    }
+    
+    useEffect(() => {
+        document.getElementById("end").scrollIntoView();
+    }, [response]);
+
+    
     return <div className={styles.card}>
-        <div className={styles.stickHead}>
+        <div ref={responseContainerRef}
+            className={styles.stickHead}>
             <span className={styles.title}>{title}</span>
 
-            {time && <span className={styles.time}>Time:{` ${time}`}</span>}
+            {time && <span className={styles.time}>Time:{` ${formatTime(time)}`}</span>}
         </div>
         <p className={styles.result}>
-            {response}
+            {response === "\n- " ?
+                < ThreeDots
+                    height="40"
+                    width="40"
+                    radius="3"
+                    color="#d5d5d5"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                /> : response
+            }
         </p>
+        <span id="end"></span>
     </div>
 }
 
