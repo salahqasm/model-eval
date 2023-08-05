@@ -2,17 +2,16 @@
   margin: 1rem;
   width: 25%;
   box-sizing: border-box;
-
-  min-height: 20vh;
+  min-height: 70vh;
   background-color: #F5F5F5;
-  border-radius: 25px;
+  border-radius: 10px;
   font-weight: 600;
   color: #0A1C2D;
   text-align: justify;
   position: relative;
   text-align: center;
-  height: 70vh;
-  overflow-y: scroll;
+  max-height: 70vh;
+  overflow-y: auto;
 
 }
 
@@ -22,38 +21,44 @@
 
 .title {
   background-color: #F5F5F5;
-  padding: 10px 0;
+  padding: 10px 0 0 0;
   font-weight: 800;
   font-size: large;
-  position: sticky;
-  top: 0;
   display: block;
   border-bottom: 1px #e9e4dc solid;
 
 }
 
 .result {
-  padding: 0 10%;
+  padding: 5px 10%;
   text-align: justify;
   line-height: 2;
+  white-space: pre-line;
 }
 
 .time {
-  position: sticky;
-  top: 93%;
-  right: 97%;
+  /* position: sticky;
+  top: 0; */
   font-size: smaller;
   display: block;
   background-color: #F5F5F5;
-  padding: 10px 0;
-  border-top: 1px #e9e4dc solid;
+  padding: 2px 0;
+  border-bottom: 1px #e9e4dc solid;
 
 }
 
-@media (max-width: 768px) {
+.stickHead {
+  position: sticky;
+  top: 0;
+}
+
+@media (max-width: 820px) {
   .card {
     width: 100%;
     display: block;
   }
 
+  .time {
+    top: 94%;
+  }
 }
