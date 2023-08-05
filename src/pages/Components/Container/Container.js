@@ -5,15 +5,15 @@ import Search from "../Search/Search";
 import Landing from "../Landing/Landing";
 
 export default function Container() {
-  
-  const [prompt, setPrompt] = useState("");
+
   const [response, setResponse] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" })
   const [responseTime, setResponseTime] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" });
+  
 
-
+  const [clicked, setClicked] = useState(false);
   return (
     <>
-      {response.gpt4 === "" && response.gpt3 === "" ? <Landing /> :
+      {response.gpt4 === "" && response.gpt3 === "" && response.llama === "" && response.falcon === "" && !clicked ? <Landing /> :
 
         <div className={style.container}>
           <Card title={"GPT 4"} time={responseTime.gpt4} response={response.gpt4} />
@@ -23,7 +23,7 @@ export default function Container() {
 
         </div>
       }
-      <Search prompt={prompt} setPrompt={setPrompt} setResponse={setResponse} responseTime={responseTime} setResponseTime={setResponseTime} />
+      <Search setClicked={setClicked} setResponse={setResponse} responseTime={responseTime} setResponseTime={setResponseTime} />
 
     </>
   );

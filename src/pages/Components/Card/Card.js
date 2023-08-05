@@ -17,12 +17,12 @@ export default function Card({ title, time, response }) {
             return `${timeInSeconds.toFixed(2)} second(s)`;
         }
     }
-    
+
     useEffect(() => {
         document.getElementById("end").scrollIntoView();
     }, [response]);
 
-    
+
     return <div className={styles.card}>
         <div ref={responseContainerRef}
             className={styles.stickHead}>
@@ -31,7 +31,8 @@ export default function Card({ title, time, response }) {
             {time && <span className={styles.time}>Time:{` ${formatTime(time)}`}</span>}
         </div>
         <p className={styles.result}>
-            {response === "\n- " ?
+
+            {response === "" ?
                 < ThreeDots
                     height="40"
                     width="40"
@@ -41,7 +42,9 @@ export default function Card({ title, time, response }) {
                     wrapperStyle={{}}
                     wrapperClassName=""
                     visible={true}
-                /> : response
+                /> : <>
+                    • {response}
+                </>
             }
         </p>
         <span id="end"></span>

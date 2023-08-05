@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import styles from "../../../styles/Search.module.css";
 import { Raleway } from "next/font/google";
 
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
+
 const raleway = Raleway({ subsets: ["latin"] });
 
-export default function Search({ prompt, setPrompt, setResponse, responseTime, setResponseTime }) {
+function Search({ setResponse, responseTime, setClicked, setResponseTime }) {
+
+  const [prompt, setPrompt] = useState("");
   const [button, setButton] = useState(true);
   const [inputDis, setInputDis] = useState(true);
   let ws = new WebSocket("ws://localhost:8000/ws");
@@ -18,9 +23,9 @@ export default function Search({ prompt, setPrompt, setResponse, responseTime, s
     }
   }, [ws.OPEN])
 
-  // To make the button disabled untill all 4 llms ends the response && responseTime.llama && responseTime.falcon
+  // To make the button disabled untill all 4 llms ends the response 
   useEffect(() => {
-    if (responseTime.gpt3 && responseTime.gpt4)
+    if (responseTime.gpt3 && responseTime.gpt4 && responseTime.llama && responseTime.falcon)
       setButton(false)
   }, [responseTime])
 
@@ -43,6 +48,14 @@ export default function Search({ prompt, setPrompt, setResponse, responseTime, s
 
       }));
 
+    } else if (data["ErrorReplicate"]) {
+
+      setResponse(prevResponse => ({
+        ...prevResponse,
+        falcon: prevResponse.falcon + data["ErrorReplicate"].message,
+        llama: prevResponse.llama + data["ErrorReplicate"].message
+      }));
+
     } else if (data["ErrorFalcon"]) {
 
       setResponse(prevResponse => ({
@@ -51,9 +64,14 @@ export default function Search({ prompt, setPrompt, setResponse, responseTime, s
       }));
 
     } else if (data["Error"]) {
-
+      NotificationManager.error('An error occurred while connecting to the server!', '', 5000, () => {
+        alert('callback');
+      });
     } else if (data["FormatError"]) {
-
+      NotificationManager.error('Error processing this prompt', '', 5000, () => {
+        alert('callback');
+      });
+      setButton(false);
     } else if (data["gpt-3.5-turbo"]) {
 
       setResponse(prevResponse => ({
@@ -127,15 +145,16 @@ export default function Search({ prompt, setPrompt, setResponse, responseTime, s
   };
 
   async function onClickHandler() {
-    if (ws.readyState !== 0) {
+    if (ws.readyState === WebSocket.OPEN) {
       setButton(true)
+      setClicked(true);
       ws.send(prompt);
       setResponse(prevResponse => ({
         ...prevResponse,
-        gpt4: "\n- ",
-        gpt3: "\n- ",
-        llama: "\n- ",
-        falcon: "\n- "
+        gpt4: "",
+        gpt3: "",
+        llama: "",
+        falcon: ""
       }));
       setResponseTime({
         gpt4: "",
@@ -144,12 +163,18 @@ export default function Search({ prompt, setPrompt, setResponse, responseTime, s
         falcon: ""
       })
     } else {
-      window.alert("please wait untill the connection is ready")
+      NotificationManager.warning('', 'Connection is not established yet!', 3000);
+      setButton(true);
+      setTimeout(() => {
+        setButton(false)
+      }, 3000);
     }
 
   }
   return (
     <div className={styles.mainSearch}>
+      <NotificationContainer />
+
       <input
         type="text"
         name="prompt"
@@ -159,7 +184,9 @@ export default function Search({ prompt, setPrompt, setResponse, responseTime, s
         // disabled={inputDis}
         autocomplete="off"
       />
-      <button className={styles.searchButton} disabled={prompt === "" || button } onClick={() => onClickHandler()}></button>
+      <button className={styles.searchButton} disabled={prompt === "" || button} onClick={() => onClickHandler()}></button>
     </div>
   );
 }
+
+export default memo(Search);
