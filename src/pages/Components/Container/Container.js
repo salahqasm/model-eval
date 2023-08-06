@@ -1,30 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "../../../styles/Container.module.css";
 import Card from "../Card/Card";
+import Search from "../Search/Search";
+import Landing from "../Landing/Landing";
+
 export default function Container() {
-  const [isSelected, setIsSelected] = useState({ source: "", result: "" });
 
-  function changeSelect(r) {
-    setIsSelected({ source: r.source, result: r.result });
-  }
-  //   dummy data
-  const results = [
-    { source: "gpt-4", result: "answer" },
-    { source: "gpt-3.5 turbo", result: "answer" },
-    { source: "Llama-2-70b-chat", result: "answer" },
-    { source: "Falcon-40-instruct", result: "answer" },
-  ];
+  const [response, setResponse] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" })
+  const [responseTime, setResponseTime] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" });
+  
 
+  const [clicked, setClicked] = useState(false);
   return (
     <>
-      <div className={style.container}>
-        {/* <ul className={style.list}> */}
-        {results.map((res) => (
-          // <li onClick={() => changeSelect(res)}>
-          <Card />
-        ))}
-        {/* </ul> */}
-      </div>
+      {response.gpt4 === "" && response.gpt3 === "" && response.llama === "" && response.falcon === "" && !clicked ? <Landing /> :
+
+        <div className={style.container}>
+          <Card title={"GPT 4"} time={responseTime.gpt4} response={response.gpt4} />
+          <Card title={"GPT 3.5 turbo"} time={responseTime.gpt3} response={response.gpt3} />
+          <Card title={"Llama"} time={responseTime.llama} response={response.llama} />
+          <Card title={"Falcon"} time={responseTime.falcon} response={response.falcon} />
+
+        </div>
+      }
+      <Search setClicked={setClicked} setResponse={setResponse} responseTime={responseTime} setResponseTime={setResponseTime} />
+
     </>
   );
 }
+// setGpt3={setGpt3} setGpt4={setGpt4} setGpt3Time={setGpt3Time} setGpt4Time={setGpt4Time}
