@@ -1,18 +1,17 @@
 import { memo, useEffect, useState } from "react";
 import styles from "../../../styles/Search.module.css";
 import { Raleway } from "next/font/google";
-
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-
 const raleway = Raleway({ subsets: ["latin"] });
+
+let ws = new WebSocket("ws://localhost:8000/ws");
 
 function Search({ setResponse, responseTime, setClicked, setResponseTime }) {
 
   const [prompt, setPrompt] = useState("");
   const [button, setButton] = useState(true);
   const [inputDis, setInputDis] = useState(true);
-  let ws = new WebSocket("ws://localhost:8000/ws");
 
   // To make the input disabled untill the connection is successfuly made
   useEffect(() => {

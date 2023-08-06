@@ -1,6 +1,7 @@
 import styles from "@/styles/Document.module.css"
 import { useState } from "react";
-function Documents({ title, simiScore, link, content, }) {
+// { title, simiScore, link, content, }
+function Documents({ doc }) {
     const [flag, setFlag] = useState(true);
     function openNav() {
         let x = window.matchMedia("(max-width: 820px)")
@@ -19,14 +20,17 @@ function Documents({ title, simiScore, link, content, }) {
         <div className={styles.slide} id="slide">
             <button className={styles.closebtn} onClick={closeNav}></button>
 
-            <div className={styles.doc}>
-                <h3 className={styles.title}><span>Title: {title}</span> - <span>Score: {simiScore}</span></h3>
-                <p className={styles.content}>
-                    {content?.length > 200 && flag ? <>{content.substr(0, 200)}... <span className={styles.show} onClick={() => setFlag(false)}>show more</span></> : <>{content} <span className={styles.show} onClick={() => { setFlag(true) }}>Show less</span></>}
-                </p>
-                <br />
-                <span><strong>Reference: </strong><a href={link} target="_blank">{link?.length > 100 ? link.substr(0, 100) + "..." : link}</a></span>
-            </div>
+            {doc.map((elem) =>
+                <div className={styles.doc}>
+                    <h3 className={styles.title}><span>Title: {elem.title}</span> - <span>Score: {elem["similarity-score"]}</span></h3>
+                    <p className={styles.content}>
+                        {elem.content?.length > 200 && flag ? <>{elem.content.substr(0, 200)}... <span className={styles.show} onClick={() => setFlag(false)}>Show More</span></> : <>{elem.content} <span className={styles.show} onClick={() => { setFlag(true) }}>Show less</span></>}
+                    </p>
+                    <br />
+                    <span><strong>Reference: </strong><a href={elem["pdf-link"]} target="_blank">{elem["pdf-link"]?.length > 100 ? elem["pdf-link"].substr(0, 100) + "..." : elem["pdf-link"]}</a></span>
+                </div>
+            )
+            }
         </div>
     </>
 }
