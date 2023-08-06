@@ -67,11 +67,16 @@ function Search({ setResponse, responseTime, setClicked, setResponseTime }) {
       NotificationManager.error('An error occurred while connecting to the server!', '', 5000, () => {
         alert('callback');
       });
+      setTimeout(() => {
+        setButton(false)
+      }, 5000);
     } else if (data["FormatError"]) {
       NotificationManager.error('Error processing this prompt', '', 5000, () => {
         alert('callback');
       });
-      setButton(false);
+      setTimeout(() => {
+        setButton(false)
+      }, 5000);
     } else if (data["gpt-3.5-turbo"]) {
 
       setResponse(prevResponse => ({
