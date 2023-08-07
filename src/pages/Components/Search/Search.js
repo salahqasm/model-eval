@@ -51,7 +51,6 @@ function Search({ setDoc, setResponse, responseTime, setClicked, setResponseTime
       setResponse(prevResponse => ({
         ...prevResponse,
         llama: prevResponse.llama + data["ErrorLlama"].message,
-
       }));
 
     } else if (data["ErrorReplicate"]) {

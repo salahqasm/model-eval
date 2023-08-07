@@ -15,7 +15,7 @@ export default function Container() {
   const [clicked, setClicked] = useState(false);
   return (
     <>
-
+      <span className={style.bg}></span>
       {response.gpt4 === "" && response.gpt3 === "" && response.llama === "" && response.falcon === "" && !clicked ? <Landing /> :
 
         <div className={style.container}>
