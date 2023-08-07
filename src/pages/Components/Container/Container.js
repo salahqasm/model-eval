@@ -3,16 +3,18 @@ import style from "../../../styles/Container.module.css";
 import Card from "../Card/Card";
 import Search from "../Search/Search";
 import Landing from "../Landing/Landing";
-
+import Documents from "../Documents/Documents";
+import Sidebar from "../Sidebar/Sidebar";
 export default function Container() {
 
   const [response, setResponse] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" })
   const [responseTime, setResponseTime] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" });
-  
+  const [doc, setDoc] = useState([{title:"test","similarity-score":"89%","pdf-link":"test link",content:"This is content"}]);
 
   const [clicked, setClicked] = useState(false);
   return (
     <>
+
       {response.gpt4 === "" && response.gpt3 === "" && response.llama === "" && response.falcon === "" && !clicked ? <Landing /> :
 
         <div className={style.container}>
@@ -23,9 +25,10 @@ export default function Container() {
 
         </div>
       }
+      <Documents doc={doc} />
       <Search setClicked={setClicked} setResponse={setResponse} responseTime={responseTime} setResponseTime={setResponseTime} />
 
     </>
   );
 }
-// setGpt3={setGpt3} setGpt4={setGpt4} setGpt3Time={setGpt3Time} setGpt4Time={setGpt4Time}
+//title={"Test Doc"} simiScore={"89%"} link={"https://www.google.com"} content={dummy}
