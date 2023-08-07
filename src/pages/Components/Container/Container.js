@@ -9,7 +9,8 @@ export default function Container() {
 
   const [response, setResponse] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" })
   const [responseTime, setResponseTime] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" });
-  const [doc, setDoc] = useState([{title:"test","similarity-score":"89%","pdf-link":"test link",content:"This is content"}]);
+  const [doc, setDoc] = useState([{ title: "test", "similarity-score": "89%", "pdf-link": "test link", content: "This is content" }]);
+  const [docFlag, setButtonFlag] = useState(true);
 
   const [clicked, setClicked] = useState(false);
   return (
@@ -25,8 +26,8 @@ export default function Container() {
 
         </div>
       }
-      <Documents doc={doc} />
-      <Search setClicked={setClicked} setResponse={setResponse} responseTime={responseTime} setResponseTime={setResponseTime} />
+      <Documents buttonFlag={docFlag} doc={doc} />
+      <Search setButtonFlag={setButtonFlag} setDoc={setDoc} setClicked={setClicked} setResponse={setResponse} responseTime={responseTime} setResponseTime={setResponseTime} />
 
     </>
   );

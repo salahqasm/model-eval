@@ -7,7 +7,7 @@ const raleway = Raleway({ subsets: ["latin"] });
 
 let ws = new WebSocket("ws://localhost:8000/ws");
 
-function Search({ setResponse, responseTime, setClicked, setResponseTime }) {
+function Search({ setDoc, setResponse, responseTime, setClicked, setResponseTime, setButtonFlag }) {
 
   const [prompt, setPrompt] = useState("");
   const [button, setButton] = useState(true);
@@ -24,14 +24,19 @@ function Search({ setResponse, responseTime, setClicked, setResponseTime }) {
 
   // To make the button disabled untill all 4 llms ends the response 
   useEffect(() => {
-    if (responseTime.gpt3 && responseTime.gpt4 && responseTime.llama && responseTime.falcon)
-      setButton(false)
+    if (responseTime.gpt3 && responseTime.gpt4 && responseTime.llama && responseTime.falcon) {
+      setButton(false);
+      setButtonFlag(false);
+    }
   }, [responseTime])
 
   ws.onmessage = function (event) {
     let data = JSON.parse(event.data);
-
-    if (data["ErrorGpt"]) {
+    if (data["Doc"]) {
+      setDoc(prev => prev.push(data["Doc"]));
+      // console.log(data["Doc"])
+    }
+    else if (data["ErrorGpt"]) {
 
       setResponse(prevResponse => ({
         ...prevResponse,
@@ -152,6 +157,8 @@ function Search({ setResponse, responseTime, setClicked, setResponseTime }) {
     if (ws.readyState === WebSocket.OPEN) {
       setButton(true)
       setClicked(true);
+      setButtonFlag(true);
+      setDoc([]);
       ws.send(prompt);
       setResponse(prevResponse => ({
         ...prevResponse,
@@ -166,6 +173,7 @@ function Search({ setResponse, responseTime, setClicked, setResponseTime }) {
         llama: "",
         falcon: ""
       })
+
     } else {
       NotificationManager.warning('', 'Connection is not established yet!', 3000);
       setButton(true);
