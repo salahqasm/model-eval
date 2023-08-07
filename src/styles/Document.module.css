@@ -8,8 +8,8 @@
     background-color: #eee;
     border-left: 1px solid rgb(143, 143, 143);
     overflow-x: hidden;
-    transition: 0.5s;
-    /* padding-top: 60px; */
+    transition: 0.8s;
+
 }
 
 .openbtn {
@@ -66,7 +66,7 @@
     text-align: justify;
     overflow-y: auto;
     position: relative;
-
+    width: 73vw;
 }
 
 .title {
@@ -132,6 +132,7 @@
 
     .doc {
         font-size: smaller;
+        width: 90vw;
     }
 
     .title {

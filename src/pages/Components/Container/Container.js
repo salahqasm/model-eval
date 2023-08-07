@@ -6,7 +6,7 @@ import Landing from "../Landing/Landing";
 import Documents from "../Documents/Documents";
 // import Sidebar from "../Sidebar/Sidebar";
 export default function Container() {
-  //{ title: "test", "similarity-score": "89%", "pdf-link": "test link", content: "This is content" }
+  // {title:"Test Doc","pdf-link":"https://www.google.com","similarity-score":"0.978",content:"Test Content suka blyat"}
   const [response, setResponse] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" })
   const [responseTime, setResponseTime] = useState({ gpt4: "", gpt3: "", llama: "", falcon: "" });
   const [doc, setDoc] = useState([]);
@@ -15,7 +15,7 @@ export default function Container() {
   const [clicked, setClicked] = useState(false);
   return (
     <>
-
+      <span className={style.bg}></span>
       {response.gpt4 === "" && response.gpt3 === "" && response.llama === "" && response.falcon === "" && !clicked ? <Landing /> :
 
         <div className={style.container}>
