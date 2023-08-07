@@ -1,8 +1,9 @@
 import styles from "@/styles/Document.module.css"
 import { useState } from "react";
 // { title, simiScore, link, content, }
-function Documents({ doc }) {
+function Documents({ doc, buttonFlag }) {
     const [flag, setFlag] = useState(true);
+
     function openNav() {
         let x = window.matchMedia("(max-width: 820px)")
         console.log(x.matches);
@@ -16,7 +17,7 @@ function Documents({ doc }) {
         document.getElementById("slide").style.width = "0";
     }
     return <>
-        <button className={styles.openbtn} onClick={openNav}></button>
+        {!buttonFlag && <button className={styles.openbtn} onClick={openNav}></button>}
         <div className={styles.slide} id="slide">
             <button className={styles.closebtn} onClick={closeNav}></button>
 
