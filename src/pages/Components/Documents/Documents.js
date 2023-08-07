@@ -47,9 +47,9 @@ function Documents({ doc, buttonFlag }) {
                         ) : (
                             <>
                                 {elem.content}{' '}
-                                <span className={styles.show} onClick={() => handleShowMoreClick(index)}>
+                                {elem.content?.length > 200 && <span className={styles.show} onClick={() => handleShowMoreClick(index)}>
                                     Show Less
-                                </span>
+                                </span>}
                             </>
                         )}
                     </p>
