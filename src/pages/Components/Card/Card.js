@@ -19,11 +19,13 @@ export default function Card({ title, time, response }) {
     }
 
     useEffect(() => {
-        document.getElementById("end").scrollIntoView();
+        // document.getElementById(`end${title}`).scrollIntoView();
+        let obj = document.getElementById(`div${title}`);
+        obj.scrollTop = obj.scrollHeight
     }, [response]);
 
 
-    return <div className={styles.card}>
+    return <div className={styles.card} id={`div${title}`}>
         <div ref={responseContainerRef}
             className={styles.stickHead}>
             <span className={styles.title}>{title}</span>
@@ -47,7 +49,7 @@ export default function Card({ title, time, response }) {
                 </>
             }
         </p>
-        <span id="end"></span>
+        <span id={`end${title}`}></span>
     </div>
 }
 

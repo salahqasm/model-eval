@@ -34,7 +34,7 @@
 
 .searchButton:disabled {
   background-color: #adadad;
-  background-image: url("../../public/test.svg");
+  background-image: url("../../public/send.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 20px;
@@ -57,7 +57,7 @@
 
 .searchButton:not(:disabled) {
   background-color: #858494;
-  background-image: url("../../public/test.svg");
+  background-image: url("../../public/send.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 23px;
