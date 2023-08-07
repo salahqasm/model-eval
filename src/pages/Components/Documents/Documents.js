@@ -1,8 +1,8 @@
 import styles from "@/styles/Document.module.css"
 import { useState } from "react";
-
+import { Alegreya_Sans_SC } from "next/font/google";
+const teko = Alegreya_Sans_SC({ weight: ["700"], subsets: ["latin"] });
 function Documents({ doc, buttonFlag }) {
-
     const [flags, setFlags] = useState(Array(doc.length).fill(false));
 
     const handleShowMoreClick = (index) => {
@@ -24,9 +24,9 @@ function Documents({ doc, buttonFlag }) {
     function closeNav() {
         document.getElementById("slide").style.width = "0";
     }
-
+    // 
     return <>
-        {!buttonFlag && <button className={styles.openbtn} onClick={openNav}></button>}
+        {!buttonFlag && <button className={`${styles.openbtn} ${teko.className}`} onClick={openNav}></button>}
         <div className={styles.slide} id="slide">
             <button className={styles.closebtn} onClick={closeNav}></button>
 

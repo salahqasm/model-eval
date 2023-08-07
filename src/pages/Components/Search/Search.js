@@ -7,6 +7,7 @@ const raleway = Raleway({ subsets: ["latin"] });
 
 let ws = new WebSocket("ws://localhost:8000/ws");
 
+
 function Search({ setDoc, setResponse, responseTime, setClicked, setResponseTime, setButtonFlag }) {
 
   const [prompt, setPrompt] = useState("");
