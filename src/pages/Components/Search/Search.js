@@ -7,6 +7,7 @@ const raleway = Raleway({ subsets: ["latin"] });
 
 let ws = new WebSocket("ws://localhost:8000/ws");
 
+
 function Search({ setDoc, setResponse, responseTime, setClicked, setResponseTime, setButtonFlag }) {
 
   const [prompt, setPrompt] = useState("");
@@ -15,7 +16,7 @@ function Search({ setDoc, setResponse, responseTime, setClicked, setResponseTime
 
   // To make the input disabled untill the connection is successfuly made
   useEffect(() => {
-    console.log(ws.readyState);
+    // console.log(ws.readyState);
     if (ws.OPEN) {
       setInputDis(false);
       setButton(false);
@@ -33,8 +34,9 @@ function Search({ setDoc, setResponse, responseTime, setClicked, setResponseTime
   ws.onmessage = function (event) {
     let data = JSON.parse(event.data);
     if (data["Doc"]) {
-      setDoc(prev => prev.push(data["Doc"]));
-      // console.log(data["Doc"])
+
+      setDoc((prevArray) => [...prevArray, data["Doc"]]);
+
     }
     else if (data["ErrorGpt"]) {
 
@@ -69,7 +71,6 @@ function Search({ setDoc, setResponse, responseTime, setClicked, setResponseTime
 
     } else if (data["Error"]) {
       NotificationManager.error('An error occurred while connecting to the server!', '', 5000, () => {
-        alert('callback');
       });
       setTimeout(() => {
         setButton(false)
@@ -194,7 +195,7 @@ function Search({ setDoc, setResponse, responseTime, setClicked, setResponseTime
         placeholder="Prompt"
         onChange={(e) => setPrompt(e.target.value)}
         // disabled={inputDis}
-        autocomplete="off"
+        autoComplete="off"
       />
       <button className={styles.searchButton} disabled={prompt === "" || button} onClick={() => onClickHandler()}></button>
     </div>
